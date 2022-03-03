@@ -4,23 +4,23 @@ interface Post {
   userId: number,
   id: number,
   title: string,
-  body:string
+  body: string
 }
 const url = "https://jsonplaceholder.typicode.com/posts/22"
 
-const fetchData = async <T>() =>{
+const fetchData = async <T>() => {
   return await axios.get(url).then((res) => {
-    const data = res.data as Post 
+    const data = res.data as Post
     const userId = data.userId
-    const title =  data.title
-    const body =  data.body
+    const title = data.title
+    const body = data.body
     // showData(userId,title,body)
-})
+  })
 }
 fetchData()
 
-const showData = (id: number,title: string,body: string) => {
-console.log(`
+const showData = (id: number, title: string, body: string) => {
+  console.log(`
     the user with ID :${id},
     have a post with title ${title},
     and it said ${body}
@@ -28,56 +28,56 @@ console.log(`
 }
 
 interface UserAccount {
-  id:number;
-  name:string;
-  logResult:() => string
+  id: number;
+  name: string;
+  logResult: () => string
 }
 
 class Account {
-  id:number;
-  name:string;
-  constructor(id:number,name:string){
+  id: number;
+  name: string;
+  constructor(id: number, name: string) {
     this.id = id
     this.name = name;
   }
-  logResult(){
+  logResult() {
     return `user had ID ${this.id} have a name called ${this.name}`
   }
 
 }
 
 
-const newAccount:UserAccount = new Account(1,"Phuc")
+const newAccount: UserAccount = new Account(1, "Phuc")
 
 console.log(newAccount.logResult())
-const Fnc = (b:string,x:string):string =>{
+const Fnc = (b: string, x: string): string => {
   return b + x
 }
 const weatherToday = {
   time: new Date(),
-  weather:"rainy"
+  weather: "rainy"
 }
-const logWeather = (f:{time:Date,weather:string}):void =>{
-  console.log(f.weather,f.time)
+const logWeather = (f: { time: Date, weather: string }): void => {
+  console.log(f.weather, f.time)
 }
 logWeather(weatherToday,)
 
 interface Checker {
-  id:number;
-  name:string;
-  status:boolean;
-  check():string
+  id: number;
+  name: string;
+  status: boolean;
+  check(): string
 }
-const person:Checker = {
-  id:111,
-  name:"Sam",
-  status:true,
-  check():string {
-      return this.status ? "checked" : "not yet!!!!";
+const person: Checker = {
+  id: 111,
+  name: "Sam",
+  status: true,
+  check(): string {
+    return this.status ? "checked" : "not yet!!!!";
   }
 }
 
-const DetectPerson = (person:Checker):void => {
+const DetectPerson = (person: Checker): void => {
   console.log(person.id)
   console.log(person.name)
   console.log(person.status)
@@ -85,27 +85,27 @@ const DetectPerson = (person:Checker):void => {
 }
 DetectPerson(person)
 class CallFunction {
-  public strip(){
+  public strip() {
     return console.log("strip")
   }
-  
-  private momo(){
+
+  private momo() {
     return console.log("momo")
   }
 
-  runFnMomo(){
+  runFnMomo() {
     return this.momo()
   }
 }
 
 class extendFunction extends CallFunction {
-  setBack:(value:number) => void;
-  constructor(setBack:(v: number) => void){
+  setBack: (value: number) => void;
+  constructor(setBack: (v: number) => void) {
     super()
     this.setBack = setBack
   }
-  paynow(){
-    this.setBack = (number):void => {
+  paynow() {
+    this.setBack = (number): void => {
       console.log(number)
     }
   }
@@ -115,4 +115,5 @@ const setHandleSetBack = (num: number) => {
 }
 const fistCalled = new CallFunction()
 const secondCall = new extendFunction(setHandleSetBack)
-console.log(secondCall.setBack(3),secondCall.paynow(),fistCalled.runFnMomo())
+console.log(secondCall.setBack(3), secondCall.paynow(), fistCalled.runFnMomo())
+console.log("Please resolved")
