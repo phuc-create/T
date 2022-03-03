@@ -1,0 +1,16 @@
+{
+  "name": "ts-beginner",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "sam",
+  "scripts": {
+    "dev": "yarn run node && node  main.js",
+    "node": "tsc main.ts"
+  },
+  "dependencies": {
+    "axios": "^0.26.0",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.5.0"
+  }
+}
