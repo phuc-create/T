@@ -116,4 +116,4 @@ const setHandleSetBack = (num: number) => {
 const fistCalled = new CallFunction()
 const secondCall = new extendFunction(setHandleSetBack)
 console.log(secondCall.setBack(3), secondCall.paynow(), fistCalled.runFnMomo())
-console.log("Please resolved,resolve 1,resolve 2,resolve 3")
+console.log("Please resolved,resolve 1,resolve 2,resolve 3,resolve 4")
