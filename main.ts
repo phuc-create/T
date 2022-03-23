@@ -121,3 +121,4 @@ console.log("Please resolved,resolve 1,resolve 2,resolve 3")
 const resetCommit = () => {
   return "had reset"
 }
+console.log("this commit should be in changed tab")
